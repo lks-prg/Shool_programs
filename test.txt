@@ -1,0 +1,79 @@
+using System;
+using static System.Console;
+using System.Threading;
+
+class Program
+{
+    static void Main()
+
+    {
+        int speed = 5;
+        string sym = "█";
+        /*
+        SetWindowSize(100, 20);
+        SetBufferSize(100, 20);
+        SetCursorPosition(50, 10);
+        ForegroundColor = ConsoleColor.Red;
+       
+        Write("A");
+        Thread.Sleep(5000);
+        Clear();
+        SetCursorPosition(50, 10);
+        Write("B");
+        █
+
+        */
+        SetWindowSize(100, 20);
+        SetBufferSize(100, 20);
+        int max_nahoru = 18, max_dolu = 19, max_doprava = 99, max_doleva = 99, i = 0,p=0,h=0,d=0,v=0,n=0;
+
+        for (; ; ) { 
+            //doprava
+            for (i=h;i<max_doprava; i++)
+            {
+                ForegroundColor = ConsoleColor.DarkBlue;
+                SetCursorPosition(i, h);
+                Write(sym);
+                Thread.Sleep(speed);
+            }
+            //dolů
+            for (i= d;i<max_dolu;i++)
+            {
+                ForegroundColor = ConsoleColor.Red;
+                SetCursorPosition(max_dolu, i);
+                Write(sym);
+                Thread.Sleep(speed);
+            }
+            //doleva
+            for (i = max_doleva; i >v; i--)
+            {
+            
+                ForegroundColor = ConsoleColor.DarkBlue;
+                SetCursorPosition(i, max_doleva);
+                Write(sym);
+                Thread.Sleep(speed);
+            }
+
+             //nahoru
+            for (i = max_nahoru; i > n; i--)
+            {
+                ForegroundColor = ConsoleColor.Green;
+                SetCursorPosition(n, i);
+                Write(sym);
+                Thread.Sleep(speed);
+            }
+            p++;
+            h++;
+            d++;
+            v++;
+            n++;
+            max_doprava--;
+            max_doleva--;
+            max_dolu--;
+            max_nahoru--;
+            if (p == 7) break;
+
+        }
+        Read();
+    }
+}

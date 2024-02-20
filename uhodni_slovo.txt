@@ -1,0 +1,48 @@
+using System;
+using static System.Console;
+
+class Program
+{
+    static void Main()
+    {
+        /* string input = ReadLine();
+         string samohlasky = "aeiou";
+         int pocet_samohlasek = 0; 
+         for(int i =0; i < input.Length; i++){
+             for(int s=0; s < samohlasky.Length; s++)
+             {
+                 if (input[i] == samohlasky[s]) pocet_samohlasek++;
+
+             }
+         }
+         Write(pocet_samohlasek);
+         ReadLine();
+         */
+
+        string str1 = "kava";
+        string str2 = "????";
+        int uhodnuto = 0;
+        while (uhodnuto<=3)
+        {
+            Clear();
+            Write(str2); // výpis aktuálního stavu
+            Write("Zadej písmeno:"); // požadavek na zadání písmena
+            string input =ReadLine(); // čtení z ♠
+            for(int i = 0; i < 4; i++)
+            {
+                if (str1[i] == input[0])// prochází všechny písmena
+                {
+                    
+                    str2 =str2.Insert(i, input);
+                    str2 = str2.Remove(i+1, 1);
+                    uhodnuto++;
+                }
+                
+            }
+
+        
+
+        }
+    }
+}
+

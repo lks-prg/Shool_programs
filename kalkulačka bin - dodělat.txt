@@ -1,0 +1,22 @@
+using System;
+using static System.Console;
+    class Program{
+    static void Main() {
+        int cislo = 0, zbytek = 0 ;
+        // musíš použít pole
+        Console.WriteLine("Zadej hodnotu");
+        cislo = Convert.ToInt32(ReadLine());
+        while (true)
+        {
+            
+
+            zbytek = cislo % 2;
+            cislo = cislo / 2;
+            WriteLine(zbytek);
+            if (cislo < 1) break;
+        }
+        
+        
+
+
+    }  }
